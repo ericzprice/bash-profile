@@ -1,0 +1,64 @@
+Lots of times you are working on projects with long commands or commands you use all
+the time, to make them shorter.
+For a single project, you must have already had a git repo set up. If you were to change log to l, run git config --global alias.l log. An example of a good use for this is if you have a project with a long branch name.
+Create global changes for terminal - any time I’m in terminal, this is what I want to use
+
+
+
+Two ways to manipulate bash profile. One is to open it from finder window in atom.
+
+Other way and best option is to manipulate it within the command line.
+
+Once you’re in terminal, run ls -a, to make sure you have a bash profile. If you don’t have a bash profile, you have to make one. To make one, touch .bash_profile, and that will create one for you.
+
+Then you run vim .bash_profile to create aliases.
+
+alias clr="clear" # Clear your terminal screen
+alias flush="sudo discoveryutil udnsflushcaches" # Flush DNS (Yosemite)
+alias flush="killall -HUP mDNSResponder" # Flush DNS (Mavericks, Mountain Lion, Lion)
+alias flush="dscacheutil -flushcache" # Flush DNS (Snow Leopard, Leopard)
+alias ip="curl icanhazip.com" # Your public IP address
+alias ll="ls -al" # List all files in current directory in long list format
+alias ldir="ls -al | grep ^d" # List all directories in current directory in long list format
+alias o="open ." # Open the current directory in Finder
+alias ut="uptime" # Computer uptime
+
+alias ga='git add'
+alias gaa='git add .'
+alias gaaa='git add --all'
+alias gau='git add --update'
+alias gb='git branch'
+alias gbd='git branch --delete '
+alias gc='git commit'
+alias gcm='git cgommit --message'
+alias gcf='git commit --fixup'
+alias gco='git checkout'
+alias gcob='git checkout -b'
+alias gcom='git checkout master'
+alias gcos='git checkout staging'
+alias gcod='git checkout develop'
+alias gd='git diff'
+alias gda='git diff HEAD'
+alias gi='git init'
+alias glg='git log --graph --oneline --decorate --all'
+alias gld='git log --pretty=format:"%h %ad %s" --date=short --all'
+alias gm='git merge --no-ff'
+alias gma='git merge --abort'
+alias gmc='git merge --continue'
+alias gp='git pull'
+alias gpr='git pull --rebase'
+alias gr='git rebase'
+alias gs='git status'
+alias gss='git status --short'
+alias gst='git stash'
+alias gsta='git stash apply'
+alias gstd='git stash drop'
+alias gstl='git stash list'
+alias gstp='git stash pop'
+alias gsts='git stash save'
+
+# ----------------------
+# Git Functions
+# ----------------------
+# Git log find by commit message
+function glf() { git log --all --grep="$1"; }
